@@ -1,0 +1,33 @@
+body {
+    background-color: #cfd8dc;
+}
+
+/*main {*/
+    /*flex: 1 0 auto;*/
+/*}*/
+
+#map {
+    height: 500px;
+    width: 40%;
+    float: left;
+}
+
+#searchText {
+    border: 5px solid;
+    width: 400px;
+    margin-left: 10px;
+    /*float: right;*/
+}
+nav{
+    height: 80px
+}
+ .nav-wrapper {
+     height: 80px;
+ }
+footer{
+    margin-top: 20px;
+}
+/*.col.s12.m6{*/
+    /*float: right;*/
+/*}*/
+

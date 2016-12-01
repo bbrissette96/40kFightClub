@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>40k Fight Club</title>
+</head>
+<body>
+<nav class="blue-grey darken-1">
+    <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo"><img class="responsive-img" id="logo" src="images/Logo.png"/></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="store.html">Store</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h3>Find a Store Near You</h3>
+
+
+
+<div id="map">
+</div>
+<script>
+    function initMap() {
+        var uluru = {lat: 41.755915, lng: -71.461008};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+
+
+<div class="row">
+    <input type="text" id="searchText" value="Please enter Zipcode, State, or City">
+    <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Card Title</span>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Card Title</span>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="blue-grey darken-1">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">40k Fight Club</h5>
+                <p class="grey-text text-lighten-4">Contact us at admin@40kfightclub.com</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://www.games-workshop.com/en-US/Warhammer-40-000">Games Workshop</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="blue-grey darken-3">
+        <div class="container">
+            © 2016 Copyright
+        </div>
+    </div>
+</footer>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXNDasktJjvrwE3jdVFhyptf3OBQiBgKI&callback=initMap"
+        async defer>
+</script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
