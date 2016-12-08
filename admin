@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <title>40kFightClub</title>
+</head>
+
+<body>
+<nav class="blue-grey darken-1">
+    <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo"><img class="responsive-img" id="logo" src="images/Logo.png" /></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="store.html">Store</a></li>
+            <li><a href="Account.html">My Account</a></li>
+            <li><a href="admin.html">Admininstration</a></li>
+            <li><a href="index.html">Sign Out</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div id="container">
+    <div id="adminDash" class="row">
+        <div id="tabs" class="col s3">
+            <button class="waves-effect waves-light btn" type="button">Support</button>
+            <button class="waves-effect waves-light btn" type="button">Complaint</button>
+            <button class="waves-effect waves-light btn" type="button">Site Error Log</button>
+        </div>
+        <div class="col s4">
+            <div id="Support">
+            </div>
+            <div id="Complaints">
+            </div>
+            <div id="SiteErrorLogs">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="userSearch">
+    <div id="searchBar">
+        <input type="text" />
+        <button class="waves-effect waves-light btn" type="button">Search</button>
+    </div>
+    <div id="serachDisplay"></div>
+    <div id="searchButtons">
+        <button class="waves-effect waves-light btn" type="button">Edit Details</button>
+        <button class="waves-effect waves-light btn" type="button">Reset Password</button>
+        <button class="waves-effect waves-light btn" type="button">Delete Account</button>
+    </div>
+</div>
+<footer class="blue-grey darken-1">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">40k Fight Club</h5>
+                <p class="grey-text text-lighten-4">Contact us at admin@40kfightclub.com</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://www.games-workshop.com/en-US/Warhammer-40-000">Games Workshop</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="blue-grey darken-3">
+        <div class="container">
+            © 2016 Copyright
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+
+</html>
