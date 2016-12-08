@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>40k Fight Club</title>
+</head>
+<body>
+<nav class="blue-grey darken-1">
+    <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo"><img class="responsive-img" id="logo" src="images/Logo.png"/></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="store.html">Store</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div id="regDiv" style="display: none; border: 5px solid #263238; border-radius: 15px; color:white; margin-top:15px;" class="blue-grey darken-4 container col s8 center-align">
+    <h4>Army Registration</h4>
+    <form id="armyRegForm" action="" class="col left-align">
+        <div class="row s8">
+
+            <div class="input-field col s4 push-s2">
+                <input placeholder="ex. Space Marines, Orks, Necrons, etc." id="armyType" type="text" class="validate">
+                <label for="armyType">Army Type:</label>
+            </div>
+            <div class="input-field col s4 push-s2">
+                <input placeholder="Enter how many points your army has." id="armyPoints" type="number" class="validate">
+                <label for="armyPoints">Army Points:</label>
+            </div>
+        </div>
+
+        <div class="row s8">
+            <div class="input-field col s3 push-s2">
+                <input placeholder="" id="armyDetachments" type="text" class="">
+                <label for="armyDetachments">Detachments</label>
+            </div>
+            <div class="col s2 push-s2">
+                <button class="btn waves-effect waves-light" type="button" name="detachmentBtn">+
+                </button>
+            </div>
+            <div class="input-field col s3 push-s2">
+                <input placeholder="" id="armyUnit" type="text" class="">
+                <label for="armyUnit">Units:</label>
+            </div>
+            <div class="col s2 push-s2">
+                <button class="btn waves-effect waves-light" type="button" name="unitBtn">+
+                </button>
+            </div>
+        </div>
+
+        <div class="row s8">
+            <div id="detachment" style="background-color: #b3d4fc; height:150px; border: solid black 5px; overflow: auto;" class="col s3 push-s2">
+
+            </div>
+            <div id="unit" style="background-color: #b3d4fc; height:150px; border: solid black 5px; overflow: auto;" class="col s3 push-s4">
+            </div>
+        </div>
+
+        <div class="row s8">
+            <div class="col s3 push-s4">
+                <button class="btn waves-effect waves-light" type="button" name="cancelBtn">Cancel
+                </button>
+            </div>
+            <div class="col s3 push-s3">
+                <button class="btn waves-effect waves-light" type="button" name="nextBtn">Next
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="armyRegDiv" style="display:block; border: 5px solid #263238; border-radius: 15px; color:white; margin-top:15px;" class="blue-grey darken-4 container col s8 center-align">
+    <h4>Army Registration</h4>
+    Would you like to register your army now?
+    <form style="margin-top: 10px;" id="armyRegQuest" action="" class="col left-align">
+
+        <div class="row s8">
+            <div class="col s3 push-s4">
+                <button class="btn waves-effect waves-light" type="button" name="noBtn">No
+                </button>
+            </div>
+            <div class="col s3 push-s3">
+                <button class="btn waves-effect waves-light" type="button" name="yesBtn">Yes
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<footer class="blue-grey darken-1">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">40k Fight Club</h5>
+                <p class="grey-text text-lighten-4">Contact us at admin@40kfightclub.com</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://www.games-workshop.com/en-US/Warhammer-40-000">Games Workshop</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="blue-grey darken-3">
+        <div class="container">
+            © 2016 Copyright
+        </div>
+    </div>
+</footer>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+<script>
+    $(document).ready(function (){
+        var div = "<div style='background-color:white; height:30px; border:solid black 1px; color:black;'> <div class='text left'>";
+        var endDiv = "</div> <button class='right' type='button' name='removeBtn'>x</button></div>"
+        $("[name|='nextBtn']").click(function (){
+            window.location.href = "reg3.html";
+        });
+
+        $("[name|='cancelBtn']").click(function (){
+            window.location.href = "index.html";
+        });
+
+        $("[name|='noBtn']").click(function (){
+            window.location.href = "reg3.html";
+        });
+
+        $("[name|='yesBtn']").click(function (){
+            $("#armyRegDiv").css("display", "none");
+            $("#regDiv").css("display", "block");
+        });
+
+        $("#detachment").on("click","[name|='removeBtn']", function (){
+            $(this).closest("div").remove();
+        });
+
+        $("#unit").on("click","[name|='removeBtn']", function (){
+            $(this).closest("div").remove();
+        });
+
+        $("[name|='detachmentBtn']").click(function () {
+            var detach = $("#armyDetachments").val();
+            $("#armyDetachments").val("");
+            if(detach.length != 0) {
+                var addStr = div + detach + endDiv;
+                $("#detachment").append(addStr);
+            }
+        });
+
+        $("[name|='unitBtn']").click(function () {
+            var unit = $("#armyUnit").val();
+            $("#armyUnit").val("");
+            if(unit.length != 0) {
+                var addStr = div + unit + endDiv;
+                $("#unit").append(addStr);
+            }
+        });
+    });
+</script>
+</html>
