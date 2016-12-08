@@ -6,6 +6,10 @@ body {
     /*flex: 1 0 auto;*/
 /*}*/
 
+#nav-mobile a {
+    font-size: 25px;
+}
+
 #map {
     height: 500px;
     width: 40%;
@@ -19,15 +23,20 @@ body {
     /*float: right;*/
 }
 nav{
-    height: 80px
+    height: 80px;
 }
  .nav-wrapper {
      height: 80px;
  }
+
 footer{
     margin-top: 20px;
 }
+
 /*.col.s12.m6{*/
     /*float: right;*/
 /*}*/
 
+/*.card-content{*/
+    /*font-size: 36px;*/
+/*}*/

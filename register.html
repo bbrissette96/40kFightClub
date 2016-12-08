@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>40k Fight Club</title>
+</head>
+<body>
+<nav class="blue-grey darken-1">
+    <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo"><img class="responsive-img" id="logo" src="images/Logo.png"/></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="store.html">Store</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div id="regDiv" style="border: 5px solid #263238; border-radius: 15px; color:white; margin-top:15px;" class="blue-grey darken-4 container col s8 center-align">
+    <h4>Player Registration</h4>
+    <form id="playerRegForm" action="" class="col left-align">
+
+        <div class="row s8">
+            <div class="input-field col s4 push-s2">
+                <input placeholder="ex. ThatGuy27" id="playerUser" type="text" class="validate">
+                <label for="playerUser">Username:</label>
+            </div>
+        </div>
+
+        <div class="row s8">
+            <div class="input-field col s4 push-s2">
+                <input placeholder="ex. John" id="playerFName" type="text" class="validate">
+                <label for="playerFName">First Name:</label>
+            </div>
+            <div class="input-field col s4 push-s2">
+                <input placeholder="ex. Smith" id="playerLName" type="text" class="validate">
+                <label for="playerLName">Last Name:</label>
+            </div>
+        </div>
+
+        <div class="row s8">
+            <div class="input-field col s4 push-s2">
+                <input placeholder="ex. jsmith@email.com" id="playerEmail" type="email" class="validate">
+                <label for="playerEmail">Email:</label>
+            </div>
+            <div class="input-field col s4 push-s2">
+                <input placeholder="ex. 555-555-5555" id="playerPhone" type="tel" class="validate">
+                <label for="playerPhone">Phone:</label>
+            </div>
+        </div>
+
+        <div class="row s8">
+            <div class="input-field col s4 push-s2">
+                <input placeholder="Enter Password" id="playerPass" type="password" class="validate">
+                <label for="playerPass">Password:</label>
+            </div>
+            <div class="input-field col s4 push-s2">
+                <input placeholder="Confirm Password" id="playerPassCfm" type="password" class="validate">
+                <label for="playerPassCfm">Confirm Password:</label>
+            </div>
+        </div>
+
+        <div class="row s8">
+            <div class="col s3 push-s4">
+                <button class="btn waves-effect waves-light" type="button" name="cancelBtn">Cancel
+                </button>
+            </div>
+            <div class="col s3 push-s3">
+                <button class="btn waves-effect waves-light" type="submit" name="nextBtn">Next
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<footer class="blue-grey darken-1">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">40k Fight Club</h5>
+                <p class="grey-text text-lighten-4">Contact us at admin@40kfightclub.com</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="https://www.games-workshop.com/en-US/Warhammer-40-000">Games Workshop</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="blue-grey darken-3">
+        <div class="container">
+            © 2016 Copyright
+        </div>
+    </div>
+</footer>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+<script>
+    $(document).ready(function (){
+        $("[name|='nextBtn']").click(function (){
+            var complete = 1;
+            if($("#playerPass").val() != $("#playerPassCfm").val()){
+                alert("Passwords must match");
+                complete = 0;
+                event.preventDefault();
+            }
+            else if($("#playerFName").val().length < 1 || $("#playerLName").val().length < 1){
+                alert("Must have first and last name");
+                complete = 0;
+                event.preventDefault();
+            }
+            if (typeof(Storage) !== "undefined") {
+                sessionStorage.setItem("User", $("#playerUser").val());
+                event.preventDefault();
+                if(complete == 1) {
+                    window.location.href = "reg2.html";
+                }
+            } else {
+                // Sorry! No Web Storage support..
+            }
+        });
+
+        $("[name|='cancelBtn']").click(function (){
+            if (typeof(Storage) !== "undefined") {
+                event.preventDefault();
+                window.location.href = "index.html";
+            } else {
+                // Sorry! No Web Storage support..
+            }
+        });
+    });
+</script>
+</html>
