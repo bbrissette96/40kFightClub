@@ -21,6 +21,9 @@ $(function () {
     $('#uPhoneChange').val(player.phone);
     $('#uArmyType').val(player.armyType);
     $('#uPoints').val(player.points);
+    $('#leaveStore').on('click', function(){
+       $('#Stores').remove(); 
+    })
     $('#addDetatch').on('click', function () {
         var newDetatch = $('#uDetatchInput').val();
         $('#detatch').append("<div class='detatch'><p>" + newDetatch + "</p><button type='button' class='remove'>Remove</button></div>");
